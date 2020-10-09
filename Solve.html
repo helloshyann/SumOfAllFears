@@ -79,6 +79,7 @@
                 <input type="number" id="inputK" size="15" placeholder="Enter a K variable" required>
             </div>
         </div>
+
         <!--<hr/>
         <div class="row">
 
@@ -132,11 +133,11 @@
         function arrayAndK() {
 
             //Establish Array Variables
-            let sumOfAllFears = [3, 7, 10, 15];
-            const sum3 = sumOfAllFears[0];
-            const sum7 = sumOfAllFears[1];
-            const sum10 = sumOfAllFears[2];
-            const sum15 = sumOfAllFears[3];
+            let sumofallfears = [3, 7, 10, 15];
+            const sum3 = sumofallfears[0];
+            const sum7 = sumofallfears[1];
+            const sum10 = sumofallfears[2];
+            const sum15 = sumofallfears[3];
 
             //Step 1: Get User Input
             let inputK = document.getElementById("inputK").value;
@@ -150,73 +151,60 @@
             //Compare inputK with all double combinations
             for (let i = 1; i <= 1; i++) {
 
-                if (inputK == sum3 + sum7) {
-                //document.getElementById("result").innertext = `<h5>Yes! 3 + 7 = ${inputK}.</h5>`;
+            if (inputK == sum3 + sum7) {
                     confetti.start(1000);
                     result += '<h5>Yes! 3 + 7 = Your Result </h5>';
             }
             else if (inputK == sum3 + sum10) {
-                //document.getElementById("result").innerHTML = `<h5>Yes! 3 + 10 = ${inputK}.</h5>`;
                     confetti.start(1000);
                     result += '<h5>Yes! 3 + 10 = Your Result </h5>';
             }
             else if (inputK == sum3 + sum15) {
-                //document.getElementById("result").innerHTML = `<h5>Yes! 3 + 15 = ${inputK}.</h5>`;
                     confetti.start(1000);
                     result += '<h5>Yes! 3 + 15 = Your Result </h5>';
             }
             else if (inputK == sum7 + sum10) {
-                //document.getElementById("result").innerHTML = `<h5>Yes! 7 + 10 = ${inputK}.</h5>`;
                     confetti.start(1000);
                     result += '<h5>Yes! 7 + 10 = Your Result </h5>';
             }
             else if (inputK == sum7 + sum15) {
-                //document.getElementById("result").innerHTML = `<h5>Yes! 7 + 15 = ${inputK}.</h5>`;
                     confetti.start(1000);
                     result += '<h5>Yes! 7 + 15 = Your Result </h5>';
             }
             else if (inputK == sum10 + sum15) {
-                //document.getElementById("result").innerHTML = `<h5>Yes! 10 + 15 = ${inputK}.</h5>`;
                     confetti.start(1000);
                     result += '<h5>Yes! 10 + 15 = Your Result </h5>';
             }
             //Compare inputK with all triple combinations
             else if (inputK == sum3 + sum7 + sum10) {
-                //document.getElementById("result").innerHTML = `<h5>Yes! 3 + 7 + 10 = ${inputK}.</h5>`;
                     confetti.start(1000);
                     result += '<h5>Yes! 3 + 7 + 10 = Your Result </h5>';
             }
             else if (inputK == sum3 + sum7 + sum15) {
-                //document.getElementById("result").innerHTML = `<h5>Yes! 3 + 7 + 15 = ${inputK}.</h5>`;
                     confetti.start(1000);
                     result += '<h5>Yes! 3 + 7 + 15 = Your Result </h5>';
             }
             else if (inputK == sum3 + sum10 + sum15) {
-                //document.getElementById("result").innerHTML = `<h5>Yes! 3 + 10 + 15 = ${inputK}.</h5>`;
                     confetti.start(1000);
                     result += '<h5>Yes! 3 + 10 + 15 = Your Result </h5>';
             }
             else if (inputK == sum7 + sum10 + sum15) {
-                //document.getElementById("result").innerHTML = `<h5>Yes! 7 + 10 + 15 = ${inputK}.</h5>`;
                     confetti.start(1000);
                     result += '<h5>Yes! 7 + 10 + 15 = Your Result </h5>';
             }
             //Compare inputK with all combinations
             else if (inputK == sum3 + sum7 + sum10 + sum15) {
-                //document.getElementById("result").innerHTML = `<h5>Yes! 3 + 7 + 10 + 15 = ${inputK}.</h5>`;
                     confetti.start(5000);
                     result += '<h5>All Numbers Add Up To Your Result!</h5>';
             }
             //If inputK does not successfully compare
             else {
-                //document.getElementById("result").innerHTML = `<h5>Sorry, none of the numbers add up to ${inputK}.</h5>`;
                     result += '<h5>Sorry, none of the numbers add up to your result.</h5>';
             }
             }
             //Step 3: Display Result to User
             return result;
         }
-
 
         //Button Event
         document.getElementById("addForK").addEventListener('click', function () {
