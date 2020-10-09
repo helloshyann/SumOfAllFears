@@ -67,32 +67,43 @@
 
         <hr />
 
+        <div class="row">
+            <div class="col text-center">
+                <h6>[3, 7, 10, 15]</h6>
+            </div>
+        </div>
+
         <!--Input Row-->
         <div class="row">
             <div class="col text-center">
-                <input type="number" id="bld1" placeholder="1st Building" value="2">
-            </div>
-            <div class="col text-center">
-                <input type="number" id="bld2" placeholder="2nd Building" value="1">
-            </div>
-            <div class="col text-center">
-                <input type="number" id="bld3" placeholder="3rd Building" value="3">
-            </div>
-            <div class="col text-center">
-                <input type="number" id="bld4" placeholder="4th Building" value="2">
-            </div>
-            <div class="col text-center">
-                <input type="number" id="bld5" placeholder="5th Building" value="4">
+                <input type="number" id="inputK" size="15" placeholder="Enter a K variable" required>
             </div>
         </div>
+        <!--<hr/>
+        <div class="row">
+
+            <div class="col text-center">
+                <input type="number" id="input3" size="10" placeholder="Enter a number" required>
+            </div>
+            <div class="col text-center">
+                <input type="number" id="input7" size="10" placeholder="Enter a number" required>
+            </div>
+            <div class="col text-center">
+                <input type="number" id="input10" size="10" placeholder="Enter a number" required>
+            </div>
+            <div class="col text-center">
+                <input type="number" id="input15" size="10" placeholder="Enter a number" required>
+            </div>
+
+         </div>-->
 
         <hr />
 
         <!--Submit Button-->
         <div class="row">
             <div class="col text-center">
-                <button class="btn btn-default" data-toggle="modal" data-target="#myModal" id="measureUp">
-                MEASURE HEIGHTS
+                <button class="btn btn-default" data-toggle="modal" data-target="#myModal" id="addForK">
+                    CALCULATE
                 </button>
             </div>
         </div>
@@ -117,38 +128,104 @@
     </div>
 
     <script>
-        //Button Event
-        document.getElementById("measureUp").addEventListener("click", arraySort(), {
-        });
 
-        function arraySort () {
+        function arrayAndK() {
 
-            //Building Array
-            let heightOne = Number(document.getElementById("bld1").value);
-            let heightTwo = Number(document.getElementById("bld2").value);
-            let heightThree = Number(document.getElementById("bld3").value);
-            let heightFour = Number(document.getElementById("bld4").value);
-            let heightFive = Number(document.getElementById("bld5").value);
+            //Establish Array Variables
+            let sumOfAllFears = [3, 7, 10, 15];
+            const sum3 = sumOfAllFears[0];
+            const sum7 = sumOfAllFears[1];
+            const sum10 = sumOfAllFears[2];
+            const sum15 = sumOfAllFears[3];
 
-            let allHeights = [heightOne, heightTwo, heightThree, heightFour, heightFive];
-            let sortHeights = [];
-            let count = 1;
-            let currMax = allHeights[0];
-            sortHeights.push(currMax);
+            //Step 1: Get User Input
+            let inputK = document.getElementById("inputK").value;
+            //let sum3 = document.getElementById("input3").value;
+            //let sum7 = document.getElementById("input7").value;
+            //let sum10 = document.getElementById("input10").value;
+            //let sum15 = document.getElementById("input15").value;
+            let result = [];
 
-            //Loop over array and check if the number is smaller to one to left of it
-            for (let i = 0; i < allHeights.length; i++) {
+            //Step 2: Do Something With Input
+            //Compare inputK with all double combinations
+            for (let i = 1; i <= 1; i++) {
 
-                if (allHeights[i] > currMax) {
-                    count++;
-                    sortHeights.push(allHeights[i]);
-                    currMax = allHeights[i];
-                }
-            
+                if (inputK == sum3 + sum7) {
+                //document.getElementById("result").innertext = `<h5>Yes! 3 + 7 = ${inputK}.</h5>`;
+                    confetti.start(1000);
+                    result += '<h5>Yes! 3 + 7 = Your Result </h5>';
             }
-            document.getElementById("result").innerHTML =
-                `${count} <br> ${sortHeights}`;
+            else if (inputK == sum3 + sum10) {
+                //document.getElementById("result").innerHTML = `<h5>Yes! 3 + 10 = ${inputK}.</h5>`;
+                    confetti.start(1000);
+                    result += '<h5>Yes! 3 + 10 = Your Result </h5>';
+            }
+            else if (inputK == sum3 + sum15) {
+                //document.getElementById("result").innerHTML = `<h5>Yes! 3 + 15 = ${inputK}.</h5>`;
+                    confetti.start(1000);
+                    result += '<h5>Yes! 3 + 15 = Your Result </h5>';
+            }
+            else if (inputK == sum7 + sum10) {
+                //document.getElementById("result").innerHTML = `<h5>Yes! 7 + 10 = ${inputK}.</h5>`;
+                    confetti.start(1000);
+                    result += '<h5>Yes! 7 + 10 = Your Result </h5>';
+            }
+            else if (inputK == sum7 + sum15) {
+                //document.getElementById("result").innerHTML = `<h5>Yes! 7 + 15 = ${inputK}.</h5>`;
+                    confetti.start(1000);
+                    result += '<h5>Yes! 7 + 15 = Your Result </h5>';
+            }
+            else if (inputK == sum10 + sum15) {
+                //document.getElementById("result").innerHTML = `<h5>Yes! 10 + 15 = ${inputK}.</h5>`;
+                    confetti.start(1000);
+                    result += '<h5>Yes! 10 + 15 = Your Result </h5>';
+            }
+            //Compare inputK with all triple combinations
+            else if (inputK == sum3 + sum7 + sum10) {
+                //document.getElementById("result").innerHTML = `<h5>Yes! 3 + 7 + 10 = ${inputK}.</h5>`;
+                    confetti.start(1000);
+                    result += '<h5>Yes! 3 + 7 + 10 = Your Result </h5>';
+            }
+            else if (inputK == sum3 + sum7 + sum15) {
+                //document.getElementById("result").innerHTML = `<h5>Yes! 3 + 7 + 15 = ${inputK}.</h5>`;
+                    confetti.start(1000);
+                    result += '<h5>Yes! 3 + 7 + 15 = Your Result </h5>';
+            }
+            else if (inputK == sum3 + sum10 + sum15) {
+                //document.getElementById("result").innerHTML = `<h5>Yes! 3 + 10 + 15 = ${inputK}.</h5>`;
+                    confetti.start(1000);
+                    result += '<h5>Yes! 3 + 10 + 15 = Your Result </h5>';
+            }
+            else if (inputK == sum7 + sum10 + sum15) {
+                //document.getElementById("result").innerHTML = `<h5>Yes! 7 + 10 + 15 = ${inputK}.</h5>`;
+                    confetti.start(1000);
+                    result += '<h5>Yes! 7 + 10 + 15 = Your Result </h5>';
+            }
+            //Compare inputK with all combinations
+            else if (inputK == sum3 + sum7 + sum10 + sum15) {
+                //document.getElementById("result").innerHTML = `<h5>Yes! 3 + 7 + 10 + 15 = ${inputK}.</h5>`;
+                    confetti.start(5000);
+                    result += '<h5>All Numbers Add Up To Your Result!</h5>';
+            }
+            //If inputK does not successfully compare
+            else {
+                //document.getElementById("result").innerHTML = `<h5>Sorry, none of the numbers add up to ${inputK}.</h5>`;
+                    result += '<h5>Sorry, none of the numbers add up to your result.</h5>';
+            }
+            }
+            //Step 3: Display Result to User
+            return result;
         }
+
+
+        //Button Event
+        document.getElementById("addForK").addEventListener('click', function () {
+            let result = "";
+            let valueK = document.getElementById('inputK').value;
+            result = arrayAndK(valueK);
+            document.getElementById('result').innerHTML = `${result}`;
+        })
+
 
     </script>
 
@@ -156,7 +233,7 @@
     <script src="//code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="//stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-
+    <script src="Scripts/confetti.js"></script>
 
 
 </body>
