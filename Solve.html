@@ -67,36 +67,28 @@
 
         <hr />
 
-        <div class="row">
-            <div class="col text-center">
-                <h6>[3, 7, 10, 15]</h6>
-            </div>
-        </div>
-
         <!--Input Row-->
         <div class="row">
             <div class="col text-center">
-                <input type="number" id="inputK" size="15" placeholder="Enter a K variable" required>
+                <input type="number" id="inputK" size="15" placeholder="Enter a K variable">
             </div>
         </div>
 
-        <!--<hr/>
+        <hr/>
         <div class="row">
-
             <div class="col text-center">
-                <input type="number" id="input3" size="10" placeholder="Enter a number" required>
+                <input type="number" id="input3" size="3" value="3" placeholder="3...">
             </div>
             <div class="col text-center">
-                <input type="number" id="input7" size="10" placeholder="Enter a number" required>
+                <input type="number" id="input7" size="3" value="7" placeholder="7...">
             </div>
             <div class="col text-center">
-                <input type="number" id="input10" size="10" placeholder="Enter a number" required>
+                <input type="number" id="input10" size="3" value="10" placeholder="10...">
             </div>
             <div class="col text-center">
-                <input type="number" id="input15" size="10" placeholder="Enter a number" required>
+                <input type="number" id="input15" size="3" value="15" placeholder="15...">
             </div>
-
-         </div>-->
+         </div>
 
         <hr />
 
@@ -118,7 +110,8 @@
                     </div>
                     <div class="modal-body text-center">
                         <h1>Results</h1><br />
-                        <span id="result"></span>
+                        <span id="userArrayPlacement"></span><br />
+                        <span id="resultPlacement"></span>
                     </div>
                     <div class="modal-footer text-center">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -128,101 +121,12 @@
         </div>
     </div>
 
-    <script>
-
-        function arrayAndK() {
-
-            //Establish Array Variables
-            let sumofallfears = [3, 7, 10, 15];
-            const sum3 = sumofallfears[0];
-            const sum7 = sumofallfears[1];
-            const sum10 = sumofallfears[2];
-            const sum15 = sumofallfears[3];
-
-            //Step 1: Get User Input
-            let inputK = document.getElementById("inputK").value;
-            //let sum3 = document.getElementById("input3").value;
-            //let sum7 = document.getElementById("input7").value;
-            //let sum10 = document.getElementById("input10").value;
-            //let sum15 = document.getElementById("input15").value;
-            let result = [];
-
-            //Step 2: Do Something With Input
-            //Compare inputK with all double combinations
-            for (let i = 1; i <= 1; i++) {
-
-            if (inputK == sum3 + sum7) {
-                    confetti.start(1000);
-                    result += '<h5>Yes! 3 + 7 = Your Result </h5>';
-            }
-            else if (inputK == sum3 + sum10) {
-                    confetti.start(1000);
-                    result += '<h5>Yes! 3 + 10 = Your Result </h5>';
-            }
-            else if (inputK == sum3 + sum15) {
-                    confetti.start(1000);
-                    result += '<h5>Yes! 3 + 15 = Your Result </h5>';
-            }
-            else if (inputK == sum7 + sum10) {
-                    confetti.start(1000);
-                    result += '<h5>Yes! 7 + 10 = Your Result </h5>';
-            }
-            else if (inputK == sum7 + sum15) {
-                    confetti.start(1000);
-                    result += '<h5>Yes! 7 + 15 = Your Result </h5>';
-            }
-            else if (inputK == sum10 + sum15) {
-                    confetti.start(1000);
-                    result += '<h5>Yes! 10 + 15 = Your Result </h5>';
-            }
-            //Compare inputK with all triple combinations
-            else if (inputK == sum3 + sum7 + sum10) {
-                    confetti.start(1000);
-                    result += '<h5>Yes! 3 + 7 + 10 = Your Result </h5>';
-            }
-            else if (inputK == sum3 + sum7 + sum15) {
-                    confetti.start(1000);
-                    result += '<h5>Yes! 3 + 7 + 15 = Your Result </h5>';
-            }
-            else if (inputK == sum3 + sum10 + sum15) {
-                    confetti.start(1000);
-                    result += '<h5>Yes! 3 + 10 + 15 = Your Result </h5>';
-            }
-            else if (inputK == sum7 + sum10 + sum15) {
-                    confetti.start(1000);
-                    result += '<h5>Yes! 7 + 10 + 15 = Your Result </h5>';
-            }
-            //Compare inputK with all combinations
-            else if (inputK == sum3 + sum7 + sum10 + sum15) {
-                    confetti.start(5000);
-                    result += '<h5>All Numbers Add Up To Your Result!</h5>';
-            }
-            //If inputK does not successfully compare
-            else {
-                    result += '<h5>Sorry, none of the numbers add up to your result.</h5>';
-            }
-            }
-            //Step 3: Display Result to User
-            return result;
-        }
-
-        //Button Event
-        document.getElementById("addForK").addEventListener('click', function () {
-            let result = "";
-            let valueK = document.getElementById('inputK').value;
-            result = arrayAndK(valueK);
-            document.getElementById('result').innerHTML = `${result}`;
-        })
-
-
-    </script>
-
     <!-- Bootstrap core JavaScript -->
     <script src="//code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="//stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <script src="Scripts/confetti.js"></script>
-
+    <script src="/Scripts/confetti.js"></script>
+    <script src="/Scripts/Custom.js"></script>
 
 </body>
 </html>
