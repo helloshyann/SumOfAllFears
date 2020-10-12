@@ -10,6 +10,6 @@ This program has been modified to allow the user to enter in their own values fo
 Credits to these artists from dafont.com from providing the fonts I used in this build: Peax Webdesign for ‘PW Bubbles’, Chequered Ink for ‘Distortion Dos Analogue’, Marsnev for “Lemon Milk’ and Chen Yining for ‘Louis George Café’.
 
 ## See This Website
-[Sum Of All Fears | A COding Challenge](https://sumofallfearsj.netlify.app)
+[Sum Of All Fears | A Coding Challenge](https://sumofallfearsj.netlify.app)
 
 © Shyann Jobe 2020
